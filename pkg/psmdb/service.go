@@ -141,7 +141,8 @@ func GetServiceAddr(svc corev1.Service, pod corev1.Pod, cl client.Client) (*Serv
 			if p.Name != mongodPortName {
 				continue
 			}
-			addr.Port = int(27017)
+			// 强制使用hostnetwork模式下，直接获取mongo的端口号
+			addr.Port = int(p.Port)
 		}
 	}
 	return addr, nil

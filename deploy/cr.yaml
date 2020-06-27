@@ -61,7 +61,7 @@ spec:
       maxUnavailable: 1
 #      minAvailable: 0
     expose:
-      enabled: false
+      enabled: true
       exposeType: NodePort
     arbiter:
       enabled: false
