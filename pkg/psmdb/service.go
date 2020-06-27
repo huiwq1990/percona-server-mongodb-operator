@@ -141,7 +141,7 @@ func GetServiceAddr(svc corev1.Service, pod corev1.Pod, cl client.Client) (*Serv
 			if p.Name != mongodPortName {
 				continue
 			}
-			addr.Port = int(p.NodePort)
+			addr.Port = int(27017)
 		}
 	}
 	return addr, nil
